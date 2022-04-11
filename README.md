@@ -16,13 +16,13 @@ to run code, use:
 ## HOW TO USE
 the web server will run on port 80, and you will gonna need to use a application to send requests to this API.
 
-**List users**<br>
+### LIST USERS<br>
 To get a list of users, you just need send **GET** request to:
 
 ```localhost:80/users```
 
 
-**Create users**<br>
+### CREATE USER<br>
 To crate a new users, you need send **POST** with required informations, in the body of your request:
 
 **information body**
@@ -38,7 +38,7 @@ send this POST request to:
 ```localhost:80/users```
 
 
-**Edit user**<br>
+### EDIT USER<br>
 If you want to edit some user information, you need to send a **PUT** request passing the ID in the url, and in the request body insert the new information:
 <pre>
 {
