@@ -13,19 +13,20 @@ const server = http.createServer((request, response) =>{
     if (request.method === "GET"){
         return response.end(JSON.stringify(users));
     }
-    if (request.method === "POST"){
-    request.on("data", (data) => {
-        const dataUser = JSON.parse(data);
 
-        const user = {
-            id: randomUUID(),
-            ...dataUser,
-        };
-        users.push(user)
-    })
-    .on("end", () => {
-        return response.end(JSON.stringify(users));
-       });
+  if (request.method === "POST"){
+  request.on("data", (data) => {
+      const dataUser = JSON.parse(data);
+
+      const user = {
+          id: randomUUID(),
+          ...dataUser,
+      };
+      users.push(user)
+  })
+  .on("end", () => {
+      return response.end(JSON.stringify(users));
+      });
     } 
   }
 
@@ -51,4 +52,6 @@ const server = http.createServer((request, response) =>{
 });
 
 // defining the port to run http server
-server.listen(80, () => console.log("Server runing!"));
+server.listen(8080, () => console.log("Server runing!"));
+
+module.exports = server;
